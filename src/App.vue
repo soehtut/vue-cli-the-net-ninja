@@ -2,7 +2,14 @@
   <h1>{{ title }}</h1>
   <!-- <Modal header="Sign Up" text="Create an account" /> -->
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+    <Modal theme="sale" @close="toggleModal">
+      <h1>Sign Up</h1>
+      <p>Create an account</p>
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+    </Modal>
   </div>
   <p>Welcome....</p>
   <button @click="toggleModal">open modal</button>
@@ -37,7 +44,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 h1 {
   color: red;
 }
