@@ -1,8 +1,16 @@
 <template>
   <h1>{{ title }}</h1>
   <!-- <Modal header="Sign Up" text="Create an account" /> -->
-  <div v-if="showModal">
-    <Modal theme="sale" @close="toggleModal">
+  <teleport to=".modals" v-if="showModal">
+    <!-- <Modal theme="sale" @close="toggleModal">
+      <h1>Sign Up</h1>
+      <p>Create an account</p>
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
+    </Modal> -->
+     <Modal theme="sale" @close="toggleModal">
       <h1>Sign Up</h1>
       <p>Create an account</p>
       <template v-slot:links>
@@ -10,7 +18,7 @@
         <a href="#">more info</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
   <p>Welcome....</p>
   <button @click="toggleModal">open modal</button>
 </template>
